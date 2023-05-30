@@ -97,6 +97,7 @@ namespace CapaVista
 
         }
 
+<<<<<<< Updated upstream
         private void button3_Click(object sender, EventArgs e)
         {
             Dictionary<string, List<string>> valoresPorTagTabla = new Dictionary<string, List<string>>();
@@ -194,6 +195,18 @@ namespace CapaVista
                 }
             }
             Eliminar(valoresPorTagTabla, valoresPorTagColumnas, valoresPorTagCondicion);
+=======
+        private void navegador1_Load(object sender, EventArgs e)
+        {
+            NavegadorVista.Navegador.idApp = "2105";
+            TextBox[] Grupotextbox = { txt_id, txt_fecha };
+            TextBox[] Idtextbox = { txt_id };
+            navegador1.textbox = Grupotextbox;
+            navegador1.tabla = dataGridView1;
+            navegador1.textboxi = Idtextbox;
+            navegador1.actual = this;
+            navegador1.cargar(dataGridView1, Grupotextbox, "sig");
+>>>>>>> Stashed changes
         }
     }
 }

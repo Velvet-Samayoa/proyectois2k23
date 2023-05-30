@@ -80,12 +80,12 @@ namespace CapaVista
 
         private void button4_Click(object sender, EventArgs e)
         {
-            AbrirFormEnPanel(new ReporteClientes());
+            //AbrirFormEnPanel(new ReporteClientes());
         }
 
         private void button4_Click_1(object sender, EventArgs e)
         {
-            AbrirFormEnPanel(new ReporteClientes());
+          //AbrirFormEnPanel(new ReporteClientes());
         }
 
         private void button5_Click(object sender, EventArgs e)

@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 using CapaModelo_Ventas;
 using System.Windows.Forms;
 using System.Data.Odbc;
+using System.Data;
+
 
 
 namespace Ventas_CapaControlador
@@ -13,6 +15,7 @@ namespace Ventas_CapaControlador
     public class Controlador
     {
         Cpconexion conexion = new Cpconexion();
+<<<<<<< Updated upstream
         string numeroId = "SELECT Pk_idCotizacion FROM `ModuloVentas`.`tbl_cotizacion` ORDER BY Pk_idCotizacion DESC LIMIT 1;";
         string numeroIdDetalle = "SELECT Pk_detallecotizacion FROM `ModuloVentas`.`tbl_detalle_cotizacion` ORDER BY Pk_detallecotizacion DESC LIMIT 1;";
         string comboProductos = "select nombre_producto from `ModuloVentas`.`tbl_producto`";
@@ -22,6 +25,36 @@ namespace Ventas_CapaControlador
         
 
         public string llenarTextBoxID()
+=======
+        Sentencias sn = new Sentencias();
+        public double IDS
+
+
+        public string[] llenartabla3(string idFactura, string proveedor, string almacen)//Funcion para llenar tabla
+        {
+            string[] datos = new string[7];
+            try
+            {
+                OdbcDataAdapter dt = sn.llenartabla3(idFactura, proveedor, almacen);
+                DataTable table = new DataTable();
+                dt.Fill(table);
+                for (int x = 0; x < datos.Length; x++)
+                {
+                    datos[x] = table.Rows[table.Rows.Count - 1][x].ToString();
+                }
+
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Error:" + e);
+            }
+            return datos;
+        }
+
+
+
+        public void Guardar(Dictionary<string, List<string>> valoresPorTagTabla, Dictionary<string, List<string>> valoresPorTagColumnas)
+>>>>>>> Stashed changes
         {
             OdbcCommand cmdId = new OdbcCommand(numeroId, conexion.Conexion());
             OdbcDataReader readerId = cmdId.ExecuteReader();
@@ -103,6 +136,27 @@ namespace Ventas_CapaControlador
             }
             return "No hay valor";
         }
+
+
+
+        public void fillTable(string ntabla, DataGridView tabla)//Funcion para llenar tabla
+        {
+            try
+            {
+                OdbcDataAdapter dt = sn.llenartabla(ntabla);
+                DataTable table = new DataTable();
+                dt.Fill(table);
+                tabla.DataSource = table;
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Error:" + e);
+            }
+        }
+
+
+
+
     }
     
 }

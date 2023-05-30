@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Globalization;
 
 namespace CapaVista
 {
@@ -15,7 +16,9 @@ namespace CapaVista
         public Devolucion()
         {
             InitializeComponent();
+
         }
+
 
         private void navegador1_Load(object sender, EventArgs e)
         {
@@ -27,6 +30,23 @@ namespace CapaVista
             navegador1.textboxi = Idtextbox;
             navegador1.actual = this;
             navegador1.cargar(dataGridView1, Grupotextbox, "tbl_devolucion");
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            DateTime fechaPago = DateTime.ParseExact(dateTimePicker1.Text, "dd/MM/yyyy", CultureInfo.InvariantCulture);
+            string fechaPagoFormateado = fechaPago.ToString("yyyy-MM-dd");
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            AyudaDev ayudad = new AyudaDev();
+            ayudad.Show();
+        }
+
+        private void Devolucion_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

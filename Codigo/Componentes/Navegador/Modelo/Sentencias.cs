@@ -30,12 +30,13 @@ namespace NavegadorModelo
             try
             {
                 string sql = "insert into " + tabla + "(" + tipo + ") values (" + dato + ")";
+                Console.WriteLine(sql);
                 OdbcCommand cmd = new OdbcCommand(sql, conexion.conexion()); //las siglas cmd se encarga de interpretar de comandos en OS/2
                 cmd.ExecuteNonQuery();
             }
             catch (Exception e)
             {
-
+                Console.WriteLine(e);
             }
 
 

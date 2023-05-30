@@ -10,7 +10,6 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using FontAwesome.Sharp;
 using NavegadorControlador;
-using CapaVista;
 using Vista;
 
 namespace NavegadorVista

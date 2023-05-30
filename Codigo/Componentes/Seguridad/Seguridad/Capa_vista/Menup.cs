@@ -7,7 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using CapaVista;
 using Seguridad_Controlador;
 
 //Comentado por George Mayén 25/02/2023
@@ -75,9 +74,9 @@ namespace Vista_Seguridad
         //Método que ingresa un valor a la bitacora de acuerdo el módulo
         private void btnnominas_Click(object sender, EventArgs e)
         {
-            /*CxPVista.MDICuentasPorPagar b = new CxPVista.MDICuentasPorPagar();
+            CxPVista.MDICuentasPorPagar b = new CxPVista.MDICuentasPorPagar();
             b.Show();
-            cn.setBtitacora("5000", "Ingreso CxP");*/
+            cn.setBtitacora("5000", "Ingreso CxP");
         }
 
         private void btnInventario_Click(object sender, EventArgs e)
